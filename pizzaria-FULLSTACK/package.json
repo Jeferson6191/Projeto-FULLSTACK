@@ -8,7 +8,8 @@
     "devn": "nodemon src/backend/main.js",
     "build": "vite build",
     "lint": "eslint .",
-    "preview": "vite preview"
+    "preview": "vite preview",
+    "devall": "run-p dev devn"
   },
   "dependencies": {
     "@supabase/supabase-js": "^2.97.0",
@@ -30,6 +31,7 @@
     "eslint-plugin-react-refresh": "^0.4.24",
     "globals": "^16.5.0",
     "nodemon": "^3.1.14",
+    "npm-run-all": "^4.1.5",
     "vite": "^7.3.1"
   }
 }
