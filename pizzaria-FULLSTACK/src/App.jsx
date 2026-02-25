@@ -1,12 +1,18 @@
 import React from 'react'
 import './App.css'
-import Login from './components/Login'
+import Register from './pages/Register'
+import Logar from './pages/Logar'
+import LandingPage from './pages/LandingPage'
+
+
 
 function App() {
     
   return (
    <div>
-    <Login/>
+    <LandingPage/>
+    <Register/>
+    <Logar/>
    </div>
   )
 }
