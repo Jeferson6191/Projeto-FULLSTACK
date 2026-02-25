@@ -3,6 +3,8 @@ import '../style/login.css'
 import * as auth from '../services/auth.js'
 const Login = () => {
     
+
+
     const [username, setusername] = useState("")
     const [password, setpassword] = useState("")
     async function uservalue() {
@@ -10,7 +12,6 @@ const Login = () => {
         const res = await auth.validandousuario(username,password)
         console.log(`resposta do backend ${JSON.stringify(res.body)}`);
         
-
     }
 
     return(

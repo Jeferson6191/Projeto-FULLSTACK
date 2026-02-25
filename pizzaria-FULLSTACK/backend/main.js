@@ -1,9 +1,10 @@
 import express from "express"
 import "dotenv/config"
 import cors from "cors";
+import * as db from "./db/dbgeral.js"
 
-const app = express()
 const PORT = process.env.PORT
+const app = express()
 
 app.use(express.json())
 app.use(express.urlencoded({  extended: true  }))
@@ -18,10 +19,18 @@ app.get("/", (req,res)=>{
 })
 
 app.post("/register", (req,res)=>{
-    const request = req.body
-    console.log(request);
+    const requisicao = req.body
+
+    const user = requisicao.user;
+    const senha = requisicao.senha;
     
-    res.send(request)
+    db.criarperfil(user,senha)
+
+    console.log(`usuario: ${user} e senha: ${senha}`);
+    
+    res.status(200).json({
+        message:"opa"
+    })
     
 })
 
