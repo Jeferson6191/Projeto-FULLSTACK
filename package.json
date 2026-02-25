@@ -1,5 +1,31 @@
 {
   "dependencies": {
-    "express": "^5.2.1"
-  }
+    "cors": "^2.8.6",
+    "dotenv": "^17.3.1",
+    "express": "^5.2.1",
+    "pg": "^8.18.0",
+    "pg-hstore": "^2.3.4"
+  },
+  "name": "projeto-com-o-martins",
+  "version": "1.0.0",
+  "description": "��#\u0000 \u0000P\u0000r\u0000o\u0000j\u0000e\u0000t\u0000o\u0000-\u0000F\u0000U\u0000L\u0000L\u0000S\u0000T\u0000A\u0000C\u0000K\u0000\r\u0000 \u0000",
+  "main": "index.js",
+  "devDependencies": {
+    "nodemon": "^3.1.14"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Jeferson6191/Projeto-FULLSTACK.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "type": "commonjs",
+  "bugs": {
+    "url": "https://github.com/Jeferson6191/Projeto-FULLSTACK/issues"
+  },
+  "homepage": "https://github.com/Jeferson6191/Projeto-FULLSTACK#readme"
 }
