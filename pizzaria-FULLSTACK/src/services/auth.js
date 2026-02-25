@@ -1,7 +1,9 @@
 
 // fazendo post de teste para o backend
 export async function validandousuario(user,senha) {
-
+    try {
+        
+    
     const register = await fetch("http://localhost:3000/register",{
         method: "POST",
         headers:{
@@ -9,9 +11,12 @@ export async function validandousuario(user,senha) {
         },
         body: JSON.stringify({user,senha})
     })
-    if (!register.ok){
-        throw new Error("Erro na requisição");
-        
+    let resposta = await register.json();
+
+    console.log(resposta.message);
+    
+    return resposta.message
+    } catch (error) {
+        return "Erro na requisição"
     }
-    return register
 }

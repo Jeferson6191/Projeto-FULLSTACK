@@ -5,18 +5,16 @@ import ('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;
 
 const Login = () => {
     
-<<<<<<< HEAD
 
 
-=======
     
->>>>>>> 41b262a8015d230df29c901b14ba543ce5d7c77e
     const [username, setusername] = useState("")
     const [password, setpassword] = useState("")
     async function uservalue() {
         console.log("enviando requisiçãos");
         const res = await auth.validandousuario(username,password)
         console.log(`resposta do backend ${JSON.stringify(res.body)}`);
+        alert(res)
         
     }
 
