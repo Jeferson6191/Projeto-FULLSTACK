@@ -8,6 +8,8 @@ const Login = () => {
     async function uservalue() {
         console.log("enviando requisição");
         const res = await auth.validandousuario(username,password)
+        console.log(`resposta do backend ${JSON.stringify(res.body)}`);
+        
 
     }
 
