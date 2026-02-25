@@ -1,16 +1,7 @@
-import "dotenv/config";
-// importando pool
-import { Pool } from "pg";
-import chalk from "chalk";
-// importando ferramenta de hash
-import bcrypt from "bcrypt";
+import { createClient } from "@supabase/supabase-js";
+import "dotenv/config"
 
+const supabaseUrl = process.env.SUPABASE_URL;
+const supabaseKey = process.env.SUPABASE_ANON_KEY;
 
-const pool = new Pool({
-    connectionString : process.env.CONNECTION_STRING
-})
-
-export async function query(text, params) {
-    return pool.query(text, params);
-}
-
+export const supabase = createClient(supabaseUrl, supabaseKey);
