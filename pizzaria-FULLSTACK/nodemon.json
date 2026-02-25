@@ -1,0 +1,4 @@
+{
+  "watch": ["src/backend"],
+  "ignore": ["src/frontend", "node_modules"]
+}
