@@ -1,25 +1,27 @@
-import express from "express"
-import "dotenv/config"
+
+import express from "express";
+import "dotenv/config";
 import cors from "cors";
-import * as db from "./db/dbgeral.js"
+import * as db from "./db/dbgeral.js";
 import chalk from "chalk";
 
-const PORT = process.env.PORT
-const app = express()
 
-app.use(express.json())
-app.use(express.urlencoded({  extended: true  }))
-app.use(cors({
+const rotas = express();
+
+rotas.use(express.json());
+rotas.use(express.urlencoded({  extended: true  }));
+rotas.use(cors({
   origin: "http://localhost:5173",
   methods: ["GET", "POST", "PUT", "DELETE"],
   credentials: true
-}))
+}));
 
-app.get("/", (req,res)=>{
+
+rotas.get("/", (req,res)=>{
     res.send("Hello World")
-})
+});
 
-app.post("/register", async(req,res)=>{
+rotas.post("/register", async(req,res)=>{
     const requisicao = req.body
 
     const user = requisicao.user;
@@ -60,7 +62,4 @@ app.post("/register", async(req,res)=>{
 )
 
 
-
-app.listen(PORT, () =>{
-    console.log(`porta aberta ${PORT}`)
-})
+export default rotas
