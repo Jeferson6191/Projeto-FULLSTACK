@@ -16,7 +16,7 @@ export async function criarperfil(user,senha){
     
 
     const { data, error } = await supabase
-    .from('Users')
+    .from('userstoconsult')
     .insert([{
         username: user,
         password: senhacript
@@ -47,4 +47,40 @@ export async function criarperfil(user,senha){
         }
     }
 
+}
+
+export async function buscarusuario(user, senha) {
+    try {
+        
+    
+    const { data, error } = await supabase
+    .from("userstoconsult")
+    .select("password, username")
+    .eq("username", user)
+    .single()
+
+
+    const descriptografar = await bcrypt.compare(senha,data.password) 
+    console.log(`descriptorgrafar = ${descriptografar}`);
+
+
+    if (descriptografar == true) {
+        return {status:200,data:{
+        succcess:true,
+        message:"Bem Vindo" 
+    }};
+    }else{
+        return {status:404,data:{
+        succcess:true,
+        message:"Senha ou Username incorreto" 
+    }};
+    };
+    } catch (error) {
+    return{status:505,data:{
+        succcess:true,
+        message:"Senha ou Username incorreto"
+    }}   
+    }
+
+    
 }
