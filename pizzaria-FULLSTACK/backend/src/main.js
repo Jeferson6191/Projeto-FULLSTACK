@@ -1,9 +1,10 @@
 import express from "express"
-import rotas from "./rotas.js";
-
+import registerroutes from "./register.js";
+import loginroutes from "./login.js"
 
 const app = express();
-app.use(rotas);
+app.use(registerroutes);
+app.use(loginroutes);
 const PORT = process.env.PORT;
 
 

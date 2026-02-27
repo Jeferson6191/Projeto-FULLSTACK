@@ -6,22 +6,22 @@ import * as db from "./db/dbgeral.js";
 import chalk from "chalk";
 
 
-const rotas = express();
+const registerroutes = express();
 
-rotas.use(express.json());
-rotas.use(express.urlencoded({  extended: true  }));
-rotas.use(cors({
+registerroutes.use(express.json());
+registerroutes.use(express.urlencoded({  extended: true  }));
+registerroutes.use(cors({
   origin: "http://localhost:5173",
   methods: ["GET", "POST", "PUT", "DELETE"],
   credentials: true
 }));
 
 
-rotas.get("/", (req,res)=>{
+registerroutes.get("/", (req,res)=>{
     res.send("Hello World")
 });
 
-rotas.post("/register", async(req,res)=>{
+registerroutes.post("/register", async(req,res)=>{
     const requisicao = req.body
 
     const user = requisicao.user;
@@ -54,7 +54,7 @@ rotas.post("/register", async(req,res)=>{
     
     const {status,data} = await db.criarperfil(user,senha)
 
-    console.log(`usuario: ${JSON.stringify(status)} e senha: ${data.message}`);
+    console.log(`status: ${JSON.stringify(status)} e mensagem: ${data.message}`);
     
     res.status(status).json(data)
 }}
@@ -62,4 +62,4 @@ rotas.post("/register", async(req,res)=>{
 )
 
 
-export default rotas
+export default registerroutes
