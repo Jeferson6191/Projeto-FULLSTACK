@@ -4,7 +4,7 @@ export async function validandousuario_register(user,senha) {
     try {
         
     
-    const register = await fetch("https://mowburnt-terrenely-susanna.ngrok-free.dev/register",{
+    const register = await fetch("http://localhost:3000/register",{
         method: "POST",
         headers:{
             'Content-Type': 'application/json'
@@ -29,7 +29,7 @@ export async function validandousuario_login(user,senha) {
     try {
         
     
-    const login = await fetch("https://mowburnt-terrenely-susanna.ngrok-free.dev/login",{
+    const login = await fetch("http://localhost:3000/login",{
         method: "POST",
         headers:{
             'Content-Type': 'application/json'
@@ -49,4 +49,30 @@ export async function validandousuario_login(user,senha) {
         
         
     }
+}
+
+export async function validationuser(user) {
+    try {
+        
+    
+    const validar = await fetch("http://localhost:3000/validationuser",{
+        method: "POST",
+        headers:{
+            'Content-Type': 'application/json'
+        },
+        body: JSON.stringify({user})
+    })
+    let resposta = await validar.json();
+
+    console.log(resposta.message);
+    
+    return resposta.message
+    } catch (error) {
+        console.log(error);
+        
+        
+        return "Erro na requisição"
+        
+        
+    }    
 }

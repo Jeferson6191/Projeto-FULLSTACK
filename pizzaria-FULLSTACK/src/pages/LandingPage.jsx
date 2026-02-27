@@ -2,8 +2,12 @@ import React, { useState } from 'react';
 import { Link } from 'react-router-dom'; // se estiver usando react-router
 import '../style/landing.css';           // ajuste o caminho conforme sua pasta
 
+
 export default function LandingPage() {
+
+  
   const [email, setEmail] = useState('');
+  
 
   return (
     <div className="landing-wrapper">
