@@ -5,11 +5,13 @@ import { BrowserRouter, Routes, Route, createBrowserRouter, RouterProvider } fro
 import Register from './pages/Register';
 import Logar from './pages/Logar';
 import LandingPage from './pages/LandingPage.jsx';
+import Admin from './pages/Admin.jsx'
 
 const router = createBrowserRouter([
   {path: "/", element: <LandingPage/> },
   {path:"/Register", element: <Register/>},
-  {path:"/Logar", element: <Logar/>}
+  {path:"/Logar", element: <Logar/>},
+  {path:"/Admin", element: <Admin/>}
 ])
 
 createRoot(document.getElementById('root')).render(
