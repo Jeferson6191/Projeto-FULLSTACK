@@ -4,7 +4,7 @@ export async function validandousuario_register(user,senha) {
     try {
         
     
-    const register = await fetch("http://localhost:3000/register",{
+    const register = await fetch("https://mowburnt-terrenely-susanna.ngrok-free.dev/register",{
         method: "POST",
         headers:{
             'Content-Type': 'application/json'

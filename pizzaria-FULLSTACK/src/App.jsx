@@ -3,6 +3,7 @@ import './App.css'
 import Register from './pages/Register'
 import Logar from './pages/Logar'
 import LandingPage from './pages/LandingPage'
+import Admin from './pages/Admin'
 
 
 
@@ -13,6 +14,7 @@ function App() {
     <LandingPage/>
     <Register/>
     <Logar/>
+    <Admin/>
    </div>
   )
 }
