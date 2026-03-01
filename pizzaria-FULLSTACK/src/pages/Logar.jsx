@@ -15,10 +15,9 @@ const Logar = () => {
         
         const res = await auth.validandousuario_login(username,password)
         console.log(`resposta do backend ${JSON.stringify(res.body)}`);
-        alert(res)
-        
-        const valide = await auth.validationuser(username)
-        alert(valide)
+
+
+
     }
 
     return(

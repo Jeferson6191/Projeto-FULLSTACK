@@ -1,9 +1,17 @@
 import React, { useState } from 'react';
+import { validationuser } from '../services/auth';
 import { Link } from 'react-router-dom'; // se estiver usando react-router
 import '../style/landing.css';           // ajuste o caminho conforme sua pasta
 
 
 export default function LandingPage() {
+  let validar =
+  (async () => {
+    validar = await validationuser()
+  })();
+
+  alert(validar)
+  
 
   
   const [email, setEmail] = useState('');

@@ -11,7 +11,7 @@ const registerroutes = express();
 registerroutes.use(express.json());
 registerroutes.use(express.urlencoded({  extended: true  }));
 registerroutes.use(cors({
-  origin: "http://localhost:5173",
+  origin: "http://localhost:5174",
   methods: ["GET", "POST", "PUT", "DELETE"],
   credentials: true
 }));

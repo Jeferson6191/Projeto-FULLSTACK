@@ -11,7 +11,7 @@ const validationuser = express();
 validationuser.use(express.json());
 validationuser.use(express.urlencoded({  extended: true  }));
 validationuser.use(cors({
-  origin: "http://localhost:5173",
+  origin: "http://localhost:5174",
   methods: ["GET", "POST", "PUT", "DELETE"],
   credentials: true
 }));
@@ -20,10 +20,10 @@ validationuser.use(cors({
 validationuser.post("/validationuser", async(req,res)=>{
     console.log("rota /validationuser acessada");
     
-    const { user } = req.body
-    console.log(user);
+    // const { user } = req.body
+    // console.log(user);
     
-    db.validacaodeusuario(user)
+    // db.validacaodeusuario(user)
 })
     
 
