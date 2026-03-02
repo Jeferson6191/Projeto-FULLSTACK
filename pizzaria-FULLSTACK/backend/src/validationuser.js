@@ -36,7 +36,7 @@ validationuser.get("/validationuser",autenticationToken, async(req,res)=>{
   console.log(req.user);
   
   
-  res.status(200).json({"success":true,"message":"usuario"})
+  res.status(200).json({"success":true,"message":req.user})
 })
     
 

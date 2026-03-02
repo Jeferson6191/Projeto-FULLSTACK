@@ -72,7 +72,7 @@ export async function validationuser() {
         // pegando token do local storage
         
         console.log("token = "+token);
-        console.log(resposta.stringify(resposta.message));
+        console.log("resposta= "+JSON.stringify(resposta.message));
         
         return resposta.message
     }else{
