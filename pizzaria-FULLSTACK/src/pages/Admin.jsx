@@ -5,19 +5,27 @@ import '../style/admin.css'
 
 
 const Admin = () => {
-
-  const [pedidos, setPedidos] = useState([]);
-
-  useEffect(() => {
-    fetch("http://localhost:3000/pedidos")
-      .then(res => res.json())
-      .then(data => setPedidos(data));
-  }, []);
+    
+     async function verificarAdmin() {
+    const pegarUsuario =await fetch(`http://localhost:3000/Admin`, {
+      method: "GET",
+      headers: { "Content-Type": "application/json",
+        authorization: localStorage.getItem("usertoken")
+       },
+       
+    
+    });
+    let resposta = await pegarUsuario.json();
+    alert(resposta.message)
+}
+    
 
   async function finalizarPedido(id) {
     await fetch(`http://localhost:3000/pedidos/${id}`, {
       method: "PUT",
-      headers: { "Content-Type": "application/json" },
+      headers: { "Content-Type": "application/json",
+        authorization: localStorage.getItem("usertoken")
+       },
       body: JSON.stringify({ status: "Finalizado" })
     });
 
