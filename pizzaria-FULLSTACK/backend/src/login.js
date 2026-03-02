@@ -11,7 +11,7 @@ const loginroutes = express();
 loginroutes.use(express.json());
 loginroutes.use(express.urlencoded({  extended: true  }));
 loginroutes.use(cors({
-  origin: "http://localhost:5173",
+  origin: "http://localhost:5174",
   methods: ["GET", "POST", "PUT", "DELETE"],
   credentials: true
 }));
