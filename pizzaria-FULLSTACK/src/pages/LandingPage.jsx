@@ -10,7 +10,6 @@ export default function LandingPage() {
     validar = await validationuser()
   })();
 
-  alert(validar)
   
 
   

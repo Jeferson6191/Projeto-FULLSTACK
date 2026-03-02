@@ -58,24 +58,24 @@ export async function validandousuario_login(user,senha) {
 // ------------------------------  ::: get responsavel pela validação de token do usuario :::
 export async function validationuser() {
     const token = localStorage.getItem("usertoken")
+    console.log(token);
+    
     const validar = await fetch("http://localhost:3000/validationuser",{
-        method: "POST",
+        method: "GET",
         headers:{
-            'Content-Type': 'application/json'
-        },
-        body: JSON.stringify({token})
+            'Content-Type': 'application/json',
+            'authorization': token
+        }
     })
+    let resposta = await validar.json() 
     if (validar.ok) {
         // pegando token do local storage
         
         console.log("token = "+token);
-        
-        let resposta = await validar.json();
-
-        console.log(resposta.message);
+        console.log(resposta.stringify(resposta.message));
         
         return resposta.message
     }else{
-
+        return resposta.message
     }
 }
