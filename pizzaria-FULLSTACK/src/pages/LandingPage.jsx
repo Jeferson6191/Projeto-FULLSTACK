@@ -5,7 +5,7 @@ import '../style/landing.css';           // ajuste o caminho conforme sua pasta
 
 
 export default function LandingPage() {
-  let validar =
+  
   (async () => {
     validar = await validationuser()
   })();

@@ -1,4 +1,4 @@
-import { useState, useEffect } from "react";
+import React, { useState,useEffect } from 'react'
 import '../style/admin.css'
 
 
@@ -6,7 +6,7 @@ import '../style/admin.css'
 
 const Admin = () => {
     
-     async function verificarAdmin() {
+    (async()=>{
     const pegarUsuario =await fetch(`http://localhost:3000/Admin`, {
       method: "GET",
       headers: { "Content-Type": "application/json",
@@ -16,8 +16,8 @@ const Admin = () => {
     
     });
     let resposta = await pegarUsuario.json();
-    alert(resposta.message)
-}
+    alert(JSON.stringify(resposta.message))
+    })();
     
 
   async function finalizarPedido(id) {
