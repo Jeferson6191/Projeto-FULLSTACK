@@ -10,11 +10,7 @@ const loginroutes = express();
 
 loginroutes.use(express.json());
 loginroutes.use(express.urlencoded({  extended: true  }));
-loginroutes.use(cors({
-  origin: "http://localhost:5173",
-  methods: ["GET", "POST", "PUT", "DELETE"],
-  credentials: true
-}));
+loginroutes.use(cors());
 
 
 loginroutes.post("/login", async(req,res)=>{

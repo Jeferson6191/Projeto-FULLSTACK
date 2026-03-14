@@ -5,16 +5,13 @@ import cors from "cors";
 import * as db from "./db/dbgeral.js";
 import chalk from "chalk";
 
+// um negocio
 
 const registerroutes = express();
 
 registerroutes.use(express.json());
 registerroutes.use(express.urlencoded({  extended: true  }));
-registerroutes.use(cors({
-  origin: "http://localhost:5173",
-  methods: ["GET", "POST", "PUT", "DELETE"],
-  credentials: true
-}));
+registerroutes.use(cors());
 
 
 registerroutes.get("/", (req,res)=>{

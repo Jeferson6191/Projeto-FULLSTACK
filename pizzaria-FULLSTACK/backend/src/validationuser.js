@@ -10,11 +10,7 @@ const validationuser = express();
 
 validationuser.use(express.json());
 validationuser.use(express.urlencoded({  extended: true  }));
-validationuser.use(cors({
-  origin: "http://localhost:5173",
-  methods: ["GET", "POST", "PUT", "DELETE"],
-  credentials: true
-}));
+validationuser.use(cors());
 
 // preparando middleware para autenticação
 const autenticationToken = (req,res,next)=>{
